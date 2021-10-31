@@ -5,7 +5,6 @@ import {
   IconButton,
   Typography,
   Box,
-  Button,
   Badge,
   Menu,
   MenuItem,
@@ -44,93 +43,96 @@ export const NavBar = () => {
     setAnchorEl(null);
   };
   return (
-    <AppBar sx={{ backgroundColor: "white" }}>
-      <Toolbar>
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            width: "100%",
-          }}
-          component="div"
-        >
-          {/* logo */}
-          <Box>
-            <IconButton>
-              <MenuOutlinedIcon />
-            </IconButton>
-          </Box>
-          {/* links */}
-          <Box sx={{ display: "flex" }}>
-            <Typography
-              sx={{ mr: "20px", cursor: "pointer", color: "#616161" }}
-            >
-              Home
-            </Typography>
-            <Typography
-              sx={{ mr: "20px", cursor: "pointer", color: "#616161" }}
-            >
-              Brand
-            </Typography>
-            <Typography
-              sx={{ mr: "20px", cursor: "pointer", color: "#616161" }}
-              // Menuのid属性と一致させる
-              aria-controls="basic-menu"
-              // 必須
-              aria-haspopup="true"
-              aria-expanded={openMenu ? "true" : undefined}
-              onClick={handleClick}
-            >
-              Categories
-            </Typography>
-            {/* ドロップダウンアイテム */}
-            <Menu
-              // Typographyと一致させる
-              id="basic-menu"
-              // TypographyのHTML要素を入れることでMenuの位置を指定
-              anchorEl={anchorEl}
-              open={openMenu}
-              onClose={handleClose}
-            >
-              <MenuItem onClick={handleClose}>Men</MenuItem>
-              <MenuItem onClick={handleClose}>Women</MenuItem>
-            </Menu>
-            <Typography
-              sx={{ mr: "20px", cursor: "pointer", color: "#616161" }}
-            >
-              Men
-            </Typography>
-            <Typography
-              sx={{ mr: "20px", cursor: "pointer", color: "#616161" }}
-            >
-              Women
-            </Typography>
-            <Typography
-              sx={{ mr: "20px", cursor: "pointer", color: "#616161" }}
-            >
-              FAQ
-            </Typography>
-          </Box>
-          {/* button Links */}
+    <Box mb={9}>
+      <AppBar sx={{ bgcolor: "white" }}>
+        <Toolbar>
           <Box
             sx={{
               display: "flex",
-              justifyContent: "center",
+              justifyContent: "space-between",
               alignItems: "center",
+              width: "100%", // Toolbarの内側のいっぱいに広がる
+              padding: "15px 0",
             }}
+            component="div"
           >
-            {/* <Button disableElevation variant="outlined">
+            {/* logo */}
+            <Box>
+              <IconButton>
+                <MenuOutlinedIcon sx={{ fontSize: "middle" }} />
+              </IconButton>
+            </Box>
+            {/* links */}
+            <Box sx={{ display: "flex" }}>
+              <Typography
+                sx={{ mr: "20px", cursor: "pointer", color: "#616161" }}
+              >
+                Home
+              </Typography>
+              <Typography
+                sx={{ mr: "20px", cursor: "pointer", color: "#616161" }}
+              >
+                Brand
+              </Typography>
+              <Typography
+                sx={{ mr: "20px", cursor: "pointer", color: "#616161" }}
+                // Menuのid属性と一致させる
+                aria-controls="basic-menu"
+                // 必須
+                aria-haspopup="true"
+                aria-expanded={openMenu ? "true" : undefined}
+                onClick={handleClick}
+              >
+                Categories
+              </Typography>
+              {/* ドロップダウンアイテム */}
+              <Menu
+                // Typographyと一致させる
+                id="basic-menu"
+                // TypographyのHTML要素を入れることでMenuの位置を指定
+                anchorEl={anchorEl}
+                open={openMenu}
+                onClose={handleClose}
+              >
+                <MenuItem onClick={handleClose}>Men</MenuItem>
+                <MenuItem onClick={handleClose}>Women</MenuItem>
+              </Menu>
+              <Typography
+                sx={{ mr: "20px", cursor: "pointer", color: "#616161" }}
+              >
+                Men
+              </Typography>
+              <Typography
+                sx={{ mr: "20px", cursor: "pointer", color: "#616161" }}
+              >
+                Women
+              </Typography>
+              <Typography
+                sx={{ mr: "20px", cursor: "pointer", color: "#616161" }}
+              >
+                FAQ
+              </Typography>
+            </Box>
+            {/* button Links */}
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              {/* <Button disableElevation variant="outlined">
               Account
             </Button> */}
-            <IconButton>
-              <Badge badgeContent={4} color="primary">
-                <ShoppingBagIcon color="action" />
-              </Badge>
-            </IconButton>
+              <IconButton>
+                <Badge badgeContent={4} color="primary">
+                  <ShoppingBagIcon color="action" />
+                </Badge>
+              </IconButton>
+            </Box>
           </Box>
-        </Box>
-      </Toolbar>
-    </AppBar>
+        </Toolbar>
+      </AppBar>
+    </Box>
   );
 };
