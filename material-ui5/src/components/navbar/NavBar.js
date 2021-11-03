@@ -43,7 +43,7 @@ export const NavBar = () => {
     setAnchorEl(null);
   };
   return (
-    <Box mb={9}>
+    <Box sx={{ elevation: "0", mb: "70px" }}>
       <AppBar sx={{ bgcolor: "white" }}>
         <Toolbar>
           <Box
