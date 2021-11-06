@@ -5,7 +5,7 @@ import React from "react";
 const Products = () => {
   return (
     // すべてを囲むボックス
-    <Box sx={{ minHeight: "60vh", mr: 2, ml: 2, mt: -13 }}>
+    <Box sx={{ minHeight: "60vh", mr: 2, ml: 2, mt: -12 }}>
       {/* 注目商品 */}
       {/* ボックスの内側にGridを配置 */}
       <Grid sx={{ mb: 4 }} container spacing={2}>
