@@ -41,8 +41,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 export const NavBar = () => {
   // レスポンシブ
   const theme = useTheme();
+  // スモール以下の時matchesがtrueになるので、&&を利用して表示・非表示を切り替える。
   const matches = useMediaQuery(theme.breakpoints.down("sm"));
-  console.log("matches", matches);
 
   // menu制御
   const [anchorEl, setAnchorEl] = useState(null);
@@ -53,8 +53,6 @@ export const NavBar = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
-
-  console.log(anchorEl);
 
   // ドロワー制御
   const [openDrawer, setOpenDrawer] = useState(true);
@@ -149,9 +147,6 @@ export const NavBar = () => {
                   width: "0",
                 }}
               >
-                {/* <Button disableElevation variant="outlined">
-              Account
-            </Button> */}
                 {matches ? (
                   <IconButton onClick={() => setOpenDrawer(true)}>
                     <MenuIcon />

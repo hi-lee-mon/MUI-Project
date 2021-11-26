@@ -1,7 +1,9 @@
 import { Button, Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
-
+import { DesktopCategories } from "./DesktopCategories";
+import { MobaileCategory } from "./MobaileCategory";
+import { ProductList } from "./ProductList";
 const Products = () => {
   return (
     // すべてを囲むボックス
@@ -16,6 +18,7 @@ const Products = () => {
           item
           sx={{
             display: "flex",
+            // レスポンシブ
             flexDirection: { xs: "column", lg: "row" },
             justifyContent: "start",
             alignItems: "center",
@@ -78,7 +81,15 @@ const Products = () => {
           </Box>
         </Grid>
       </Grid>
+      {/* カテゴリ */}
+      <Box sx={{ display: { xs: "none", lg: "block" } }}>
+        <DesktopCategories />
+      </Box>
+      <Box sx={{ display: { xs: "block", lg: "none" } }}>
+        <MobaileCategory />
+      </Box>
       {/* 商品リスト */}
+      <ProductList />
     </Box>
   );
 };
